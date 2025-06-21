@@ -21,17 +21,20 @@ const fabric = {
   interactive: 'false',
 };
 
-export const reactNativeBuilderBobFabric = async () => {
-  console.log('Generating react native fabric library');
+export const reactNativeBuilderBobFabric = async (name: string) => {
+  console.log(`Generating react native fabric library: ${name}`);
   await fs.mkdir(reactNativeRoot);
   const params = [];
   for (const [key, value] of Object.entries(fabric)) {
     params.push(`--${key}`, value);
   }
-  await execAsync(`npx create-react-native-library@latest fabric ${params.join(' ')}`, { cwd: reactNativeRoot });
+  await execAsync(`npx create-react-native-library@latest ${name} ${params.join(' ')}`, { cwd: reactNativeRoot });
 };
 
-export const reactNativeApp = async () => {
+export const reactNativeApp = async (name: string) => {
+  console.log(`Generating react native app: ${name}`);
   await execAsync('npm uninstall -g react-native-cli @react-native-community/cli');
-  await execAsync('npx @react-native-community/cli@latest init example-app', { cwd: reactNativeRoot });
+  await execAsync(`npx @react-native-community/cli@latest init ${name} --skip-install --install-pods false --skip-git-init`, {
+    cwd: reactNativeRoot,
+  });
 };
