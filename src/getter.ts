@@ -31,13 +31,13 @@ const fabric = {
 
 const reactNativeBuilderBobFabric = async () => {
   console.log('Generating react native fabric library');
-  const libraryRoot = path.join(root, 'react-native');
-  await fs.mkdir(libraryRoot);
+  const reactNativeRoot = path.join(root, 'react-native');
+  await fs.mkdir(reactNativeRoot);
   const params = [];
   for (const [key, value] of Object.entries(fabric)) {
     params.push(`--${key}`, value);
   }
-  await execAsync(`npx create-react-native-library@latest fabric ${params.join(' ')}`);
+  await execAsync(`npx create-react-native-library@latest fabric ${params.join(' ')}`, { cwd: reactNativeRoot });
 };
 
 await rimraf(root);
