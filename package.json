@@ -23,7 +23,7 @@
   },
   "scripts": {
     "tsc": "tsc --noEmit true",
-    "start": "node src/getter.ts",
+    "compile": "node src/compiler.ts",
     "lint": "eslint"
   },
   "files": [
