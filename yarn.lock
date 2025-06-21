@@ -558,13 +558,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@goatjs/storage@github:Pnlvfx/goatjs#workspace=@goatjs/storage":
-  version: 2025.1.30
-  resolution: "@goatjs/storage@https://github.com/Pnlvfx/goatjs.git#workspace=%40goatjs%2Fstorage&commit=1377030598390618cc4497c341a38f4bd4cb5508"
-  checksum: 10c0/a7e9d2b98431ed0bc4d29380df3e93ea4db56cebf46b829985a19d71847b0aeaa2750f39ea6c9b38bb21fb91c2f07402224158085c68d2f3848996f5b76c589a
-  languageName: node
-  linkType: hard
-
 "@goatjs/typescript-config@github:Pnlvfx/typescript-config":
   version: 2025.4.21
   resolution: "@goatjs/typescript-config@https://github.com/Pnlvfx/typescript-config.git#commit=716eb6ce1344d9d58c1f335d7e57ebad06906710"
@@ -4490,7 +4483,6 @@ __metadata:
     "@goatjs/eslint": "github:Pnlvfx/eslint"
     "@goatjs/node": "github:Pnlvfx/goatjs#workspace=@goatjs/node"
     "@goatjs/rimraf": "github:Pnlvfx/goatjs#workspace=@goatjs/rimraf"
-    "@goatjs/storage": "github:Pnlvfx/goatjs#workspace=@goatjs/storage"
     "@goatjs/typescript-config": "github:Pnlvfx/typescript-config"
     "@types/node": "npm:^24.0.3"
     eslint: "npm:^9.29.0"
