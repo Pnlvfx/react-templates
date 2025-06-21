@@ -17,10 +17,11 @@ const nextJsTemplate = async () => {
 
 const fabric = {
   slug: 'react-native-fabric',
-  description: '',
+  description: 'fabric example',
   'author-name': 'simonegauli',
   'author-email': 'simonegauli@gmail.com',
   'author-url': 'https://github.com/Pnlvfx',
+  'repo-url': 'https://github.com/Pnlvfx/react-native-fabric',
   languages: 'kotlin-objc',
   type: 'fabric-view',
   'react-native-version': '0.80',
@@ -36,7 +37,6 @@ const reactNativeBuilderBobFabric = async () => {
   for (const [key, value] of Object.entries(fabric)) {
     params.push(`--${key}`, value);
   }
-  console.log(params.join(' '));
   await execAsync(`npx create-react-native-library@latest fabric ${params.join(' ')}`);
 };
 
