@@ -6,7 +6,7 @@ import unicorn from 'eslint-plugin-unicorn';
 import rules from '@goatjs/eslint/node/rules';
 
 export default tseslint.config(
-  { ignores: ['dist', 'coverage', '.template'] },
+  { ignores: ['dist', '.template'] },
   eslint.configs.recommended,
   unicorn.configs.all,
   sonarjs.configs.recommended,
