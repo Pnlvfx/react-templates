@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-template",
+  "name": "react-templates",
   "description": "An empty template of create-next-app.",
   "version": "2025.1.30",
   "author": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pnlvfx/nextjs-template.git"
+    "url": "git+https://github.com/Pnlvfx/react-templates.git"
   },
   "license": "MIT",
   "type": "module",
@@ -24,7 +24,8 @@
   "scripts": {
     "tsc": "tsc --noEmit true",
     "compile": "tsx src/compiler.ts",
-    "lint": "eslint"
+    "lint": "eslint",
+    "update": "node tools/update.ts && yarn upgrade-interactive"
   },
   "files": [
     "dist",
@@ -32,13 +33,14 @@
     "README.md"
   ],
   "devDependencies": {
-    "@eslint/js": "^9.30.1",
+    "@eslint/js": "^9.31.0",
     "@goatjs/eslint": "github:Pnlvfx/eslint",
     "@goatjs/node": "github:Pnlvfx/goatjs#workspace=@goatjs/node",
     "@goatjs/rimraf": "github:Pnlvfx/goatjs#workspace=@goatjs/rimraf",
     "@goatjs/typescript-config": "github:Pnlvfx/typescript-config",
-    "@types/node": "^24.0.10",
-    "eslint": "^9.30.1",
+    "@goatjs/updater": "github:Pnlvfx/goatjs#workspace=@goatjs/updater",
+    "@types/node": "^24.0.13",
+    "eslint": "^9.31.0",
     "eslint-plugin-sonarjs": "^3.0.4",
     "eslint-plugin-unicorn": "^59.0.1",
     "globals": "^16.3.0",
@@ -48,7 +50,7 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.35.1"
+    "typescript-eslint": "^8.36.0"
   },
   "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
 }
