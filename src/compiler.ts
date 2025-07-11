@@ -9,5 +9,3 @@ await fs.mkdir(templateRoot);
 await nextJsTemplate('empty');
 await reactNativeBuilderBobFabric('fabric-library');
 await reactNativeApp('default_app');
-// eslint-disable-next-line unicorn/no-process-exit
-process.exit(0);
