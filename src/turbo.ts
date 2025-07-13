@@ -3,10 +3,18 @@ import path from 'node:path';
 import { templateRoot } from './config.js';
 import fs from 'node:fs/promises';
 import { execAsync } from '@goatjs/node/exec';
+import { parseBashOptions } from './helpers/bash.js';
 
-export const turboTemplate = async (name: string) => {
+interface Options {
+  example?: 'with-tailwind';
+  skipInstall?: boolean;
+  packageManager?: 'npm' | 'yarn' | 'pnpm';
+}
+
+export const turboTemplate = async (name: string, options: Options = {}) => {
   console.log(`Generating turbo monorepo: ${name}`);
   const cwd = path.join(templateRoot, 'turbo');
   await fs.mkdir(cwd);
-  await execAsync(`yarn dlx create-turbo@latest --example ${name}`, { cwd });
+  /** @ts-expect-error ma porco dio. */
+  await execAsync(`yarn dlx create-turbo@latest ${name}${parseBashOptions(options)}`, { cwd });
 };

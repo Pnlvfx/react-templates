@@ -5,36 +5,19 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import { templateRoot } from './config.js';
 import { execAsync } from '@goatjs/node/exec';
+import { parseBashOptions } from './helpers/bash.js';
 
-const reactNativeRoot = path.join(templateRoot, 'react-native');
+interface Options {
+  skipInstall?: boolean;
+  installPods?: boolean;
+  skipGitInit?: boolean;
+}
 
-const fabric = {
-  slug: 'react-native-fabric',
-  description: 'fabric example',
-  'author-name': 'simonegauli',
-  'author-email': 'simonegauli@gmail.com',
-  'author-url': 'https://github.com/Pnlvfx',
-  'repo-url': 'https://github.com/Pnlvfx/react-native-fabric',
-  languages: 'kotlin-objc',
-  type: 'fabric-view',
-  example: 'vanilla',
-  interactive: 'false',
-};
-
-export const reactNativeBuilderBobFabric = async (name: string) => {
-  console.log(`Generating react native fabric library: ${name}`);
-  await fs.mkdir(reactNativeRoot);
-  const params = [];
-  for (const [key, value] of Object.entries(fabric)) {
-    params.push(`--${key}`, value);
-  }
-  await execAsync(`yarn dlx create-react-native-library@latest ${name} ${params.join(' ')}`, { cwd: reactNativeRoot });
-};
-
-export const reactNativeApp = async (name: string) => {
+export const reactNativeApp = async (name: string, options: Options = {}) => {
   console.log(`Generating react native app: ${name}`);
   await execAsync('npm uninstall -g react-native-cli @react-native-community/cli');
-  await execAsync(`yarn dlx @react-native-community/cli@latest init ${name} --skip-install --install-pods false --skip-git-init`, {
-    cwd: reactNativeRoot,
-  });
+  const cwd = path.join(templateRoot, 'react-native');
+  await fs.mkdir(cwd);
+  /** @ts-expect-error ma porco dio. */
+  await execAsync(`yarn dlx @react-native-community/cli@latest init ${name}${parseBashOptions(options)}`, { cwd });
 };
