@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-// npx create-react-native-library@latest --help for the list of options
+// yarn dlx create-react-native-library@latest --help for the list of options
 
 import path from 'node:path';
 import fs from 'node:fs/promises';
@@ -28,13 +28,13 @@ export const reactNativeBuilderBobFabric = async (name: string) => {
   for (const [key, value] of Object.entries(fabric)) {
     params.push(`--${key}`, value);
   }
-  await execAsync(`npx create-react-native-library@latest ${name} ${params.join(' ')}`, { cwd: reactNativeRoot });
+  await execAsync(`yarn dlx create-react-native-library@latest ${name} ${params.join(' ')}`, { cwd: reactNativeRoot });
 };
 
 export const reactNativeApp = async (name: string) => {
   console.log(`Generating react native app: ${name}`);
   await execAsync('npm uninstall -g react-native-cli @react-native-community/cli');
-  await execAsync(`npx @react-native-community/cli@latest init ${name} --skip-install --install-pods false --skip-git-init`, {
+  await execAsync(`yarn dlx @react-native-community/cli@latest init ${name} --skip-install --install-pods false --skip-git-init`, {
     cwd: reactNativeRoot,
   });
 };
