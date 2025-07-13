@@ -7,8 +7,8 @@ import { parseBashOptions } from './helpers/bash.js';
 
 interface Options {
   example?: 'with-tailwind';
-  skipInstall?: boolean;
-  packageManager?: 'npm' | 'yarn' | 'pnpm';
+  'skip-install'?: boolean;
+  'package-manager'?: 'npm' | 'yarn' | 'pnpm';
 }
 
 export const turboTemplate = async (name: string, options: Options = {}) => {

@@ -8,9 +8,9 @@ import { execAsync } from '@goatjs/node/exec';
 import { parseBashOptions } from './helpers/bash.js';
 
 interface Options {
-  skipInstall?: boolean;
-  installPods?: boolean;
-  skipGitInit?: boolean;
+  'skip-install'?: boolean;
+  'install-pods'?: boolean;
+  'skip-git-init'?: boolean;
 }
 
 export const reactNativeApp = async (name: string, options: Options = {}) => {

@@ -12,9 +12,10 @@ interface Options {
 }
 
 export const nextJsTemplate = async (name: string, options: Options = {}) => {
-  console.log(`Generating nextjs app: ${name}`);
   const cwd = path.join(templateRoot, 'nextjs');
   await fs.mkdir(cwd);
   /** @ts-expect-error ma porco dio. */
-  await execAsync(`yarn dlx create-next-app@canary ${name}${parseBashOptions(options)}`, { cwd });
+  const command = `yarn dlx create-next-app@canary ${name}${parseBashOptions(options)} --yes`;
+  console.log('Generation nextjs app', name, `with command:\n${command}`);
+  await execAsync(command, { cwd });
 };
