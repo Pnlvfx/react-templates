@@ -34,7 +34,7 @@
   "devDependencies": {
     "@goatjs/node": "^1.14.0",
     "@goatjs/rimraf": "^1.14.0",
-    "@goatjs/ts-unused-exports": "^1.12.0",
+    "@goatjs/ts-unused-exports": "^1.14.0",
     "@goatjs/typescript-config": "^1.14.0",
     "@types/node": "^24.3.0",
     "eslint": "^9.34.0",

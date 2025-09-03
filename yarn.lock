@@ -289,7 +289,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@goatjs/ts-unused-exports@npm:^1.12.0":
+"@goatjs/ts-unused-exports@npm:^1.14.0":
   version: 1.14.0
   resolution: "@goatjs/ts-unused-exports@npm:1.14.0::__archiveUrl=https%3A%2F%2Feurope-west8-npm.pkg.dev%2Fopen-gto-2%2Fgoat%2F%40goatjs%2Fts-unused-exports%2F-%2F%40goatjs%2Fts-unused-exports-1.14.0.tgz"
   dependencies:
@@ -1615,7 +1615,7 @@ __metadata:
   dependencies:
     "@goatjs/node": "npm:^1.14.0"
     "@goatjs/rimraf": "npm:^1.14.0"
-    "@goatjs/ts-unused-exports": "npm:^1.12.0"
+    "@goatjs/ts-unused-exports": "npm:^1.14.0"
     "@goatjs/typescript-config": "npm:^1.14.0"
     "@types/node": "npm:^24.3.0"
     eslint: "npm:^9.34.0"
