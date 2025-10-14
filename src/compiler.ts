@@ -7,6 +7,7 @@ import { checkGitStatus } from '@goatjs/node/dev/git';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { reactViteTemplate } from './vite.js';
+import { execAsync } from '@goatjs/node/exec';
 
 await checkGitStatus();
 
@@ -75,6 +76,8 @@ switch (framework) {
     await createReactNativeApp();
   }
 }
+
+await execAsync('yarn prettier . --write');
 
 // TURBO SUCK, THERE IS NO WAY TO PREVENT COMMITTING AFTER RUNNINNG THIS SHIT.
 // await turboTemplate('example', { example: 'with-tailwind', 'package-manager': 'yarn', 'skip-install': true });

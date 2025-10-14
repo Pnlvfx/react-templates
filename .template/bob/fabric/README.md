@@ -4,23 +4,19 @@ fabric
 
 ## Installation
 
-
 ```sh
 npm install react-native-fabric
 ```
 
-
 ## Usage
 
-
 ```js
-import { FabricView } from "react-native-fabric";
+import { FabricView } from 'react-native-fabric';
 
 // ...
 
-<FabricView color="tomato" />
+<FabricView color="tomato" />;
 ```
-
 
 ## Contributing
 
