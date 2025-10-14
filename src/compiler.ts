@@ -1,4 +1,3 @@
-import { rimraf } from '@goatjs/rimraf';
 import fs from 'node:fs/promises';
 import { templateRoot } from './config.js';
 import { reactNativeApp } from './react-native.js';
@@ -8,11 +7,13 @@ import { checkGitStatus } from '@goatjs/node/dev/git';
 
 await checkGitStatus();
 
-// TODO use kebabCase from goatjs node to parse the keys from camel (change key to camel)
+// TODO [2025-12-12] use kebabCase from goatjs node to parse the keys from camel (change key to camel)
 // add check for left changes on git
 
-await rimraf(templateRoot);
-await fs.mkdir(templateRoot);
+try {
+  await fs.mkdir(templateRoot);
+} catch {}
+
 await nextJsTemplate('example', { empty: true, noTailwind: true, skipInstall: true });
 await reactNativeBuilderBob('fabric', {
   slug: 'react-native-fabric',

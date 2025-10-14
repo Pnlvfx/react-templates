@@ -1,3 +1,5 @@
-import { goateslint } from '@goatjs/node-eslint';
+import { nodeConfigs } from '@goatjs/node-eslint';
+import { defineConfig } from '@eslint/config-helpers';
 
-export default goateslint({ ignores: ['dist'], tsconfigRootDir: import.meta.dirname });
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+export default defineConfig([{ ignores: ['dist', '.yarn', '.template'] }, ...nodeConfigs({ tsconfigRootDir: import.meta.dirname })]);
