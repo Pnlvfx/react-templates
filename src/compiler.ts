@@ -29,7 +29,7 @@ const createNextApp = () => {
 };
 
 const createReactViteApp = () => {
-  return reactViteTemplate('example');
+  return reactViteTemplate('example', { rolldown: true, interactive: false });
 };
 
 const createFabricLibrary = () => {
