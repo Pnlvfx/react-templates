@@ -11,5 +11,5 @@ export const reactViteTemplate = async (name: string) => {
   await fs.mkdir(cwd);
   const command = `yarn create vite ${name} --template react-ts`;
   console.log('Generation react vite app', name, `with command:\n${command}`);
-  await execAsync(command);
+  await execAsync(command, { cwd });
 };
