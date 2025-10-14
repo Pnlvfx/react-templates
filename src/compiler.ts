@@ -68,12 +68,13 @@ switch (framework) {
     await createReactNativeApp();
     break;
   }
+  default: {
+    await createNextApp();
+    await createReactViteApp();
+    await createFabricLibrary();
+    await createReactNativeApp();
+  }
 }
-
-await createNextApp();
-await createReactViteApp();
-await createFabricLibrary();
-await createReactNativeApp();
 
 // TURBO SUCK, THERE IS NO WAY TO PREVENT COMMITTING AFTER RUNNINNG THIS SHIT.
 // await turboTemplate('example', { example: 'with-tailwind', 'package-manager': 'yarn', 'skip-install': true });
