@@ -72,8 +72,9 @@ switch (framework) {
   default: {
     await createNextApp();
     await createReactViteApp();
-    await createFabricLibrary();
+    // await createFabricLibrary();
     await createReactNativeApp();
+    // await turboTemplate('turbo');
   }
 }
 
