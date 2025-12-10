@@ -2,7 +2,7 @@ import { findUnusedExports } from '@goatjs/ts-unused-exports';
 
 const unused = await findUnusedExports({
   ignoreFiles: ['eslint.config.js'],
-  ignoreVars: ['turboTemplate'],
+  ignoreVars: [],
 });
 
 if (unused) {

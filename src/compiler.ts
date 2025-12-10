@@ -8,6 +8,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { reactViteTemplate } from './vite.js';
 import { execAsync } from '@goatjs/node/exec';
+import { turboTemplate } from './turbo.js';
 
 await checkGitStatus();
 
@@ -74,7 +75,7 @@ switch (framework) {
     await createReactViteApp();
     // await createFabricLibrary();
     await createReactNativeApp();
-    // await turboTemplate('turbo');
+    await turboTemplate('turbo');
   }
 }
 
