@@ -70,6 +70,10 @@ switch (framework) {
     await createReactNativeApp();
     break;
   }
+  case 'turbo': {
+    await turboTemplate('turbo');
+    break;
+  }
   default: {
     await createNextApp();
     await createReactViteApp();
