@@ -3,7 +3,7 @@ import { templateRoot } from './config.js';
 import { reactNativeApp } from './react-native.js';
 import { nextJsTemplate } from './next.js';
 import { reactNativeBuilderBob } from './bob.js';
-import { checkGitStatus } from '@goatjs/node/dev/git';
+import { checkGitStatus } from '@goatjs/dbz/git';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { reactViteTemplate } from './vite.js';
