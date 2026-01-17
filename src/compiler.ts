@@ -79,7 +79,7 @@ switch (framework) {
     await createReactViteApp();
     // await createFabricLibrary();
     await createReactNativeApp();
-    await turboTemplate('turbo');
+    // await turboTemplate('turbo');
   }
 }
 
