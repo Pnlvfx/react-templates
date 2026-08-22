@@ -2,7 +2,7 @@
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import { execAsync } from '@goatjs/node/exec';
-import { templateRoot } from './config.js';
+import { templateRoot } from './config.ts';
 import { rimraf } from '@goatjs/rimraf';
 
 interface Options {

@@ -3,9 +3,9 @@
 
 import path from 'node:path';
 import fs from 'node:fs/promises';
-import { templateRoot } from './config.js';
+import { templateRoot } from './config.ts';
 import { execAsync } from '@goatjs/node/exec';
-import { parseBashOptions } from './helpers/bash.js';
+import { parseBashOptions } from './helpers/bash.ts';
 import { rimraf } from '@goatjs/rimraf';
 
 interface Options {

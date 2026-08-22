@@ -1,23 +1,27 @@
 import fs from 'node:fs/promises';
-import { templateRoot } from './config.js';
-import { reactNativeApp } from './react-native.js';
-import { nextJsTemplate } from './next.js';
-import { reactNativeBuilderBob } from './bob.js';
-import { checkGitStatus } from '@goatjs/dbz/git';
+import { templateRoot } from './config.ts';
+import { reactNativeApp } from './react-native.ts';
+import { nextJsTemplate } from './next.ts';
+import { reactNativeBuilderBob } from './bob.ts';
+import { dbz } from '@goatjs/dbz';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { reactViteTemplate } from './vite.js';
+import { reactViteTemplate } from './vite.ts';
 import { execAsync } from '@goatjs/node/exec';
-import { turboTemplate } from './turbo.js';
+import { turboTemplate } from './turbo.ts';
+import { createGitClient } from '@goatjs/node/git';
 
-await checkGitStatus();
+const git = createGitClient();
+await dbz.checkGitStatus(git);
 
 // TODO [2026-02-12] use kebabCase from goatjs node to parse the keys from camel (change key to camel)
 // add check for left changes on git
 
 try {
   await fs.mkdir(templateRoot);
-} catch {}
+} catch {
+  /* empty */
+}
 
 const { framework } = await yargs(hideBin(process.argv))
   .version(false)
