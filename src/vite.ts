@@ -1,3 +1,4 @@
+/* eslint-disable parallelize/no-sequential-await */
 /* eslint-disable no-console */
 import path from 'node:path';
 import fs from 'node:fs/promises';
@@ -16,7 +17,7 @@ export const reactViteTemplate = async (name: string, options: Options = {}) => 
   await fs.mkdir(cwd);
   const rolldown = options.rolldown ? '--rolldown' : '--no-rolldown';
   const interactive = options.interactive ? '--interactive' : '--no-interactive';
-  const command = `yarn create vite ${name} --template react-ts ${rolldown} ${interactive}`;
+  const command = `pnpm create vite ${name} --template react-ts ${rolldown} ${interactive}`;
   console.log('Generation react vite app', name, `with command:\n${command}`);
   await execAsync(command, { cwd });
 };

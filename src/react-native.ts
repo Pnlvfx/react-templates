@@ -1,5 +1,6 @@
+/* eslint-disable parallelize/no-sequential-await */
 /* eslint-disable no-console */
-// yarn dlx create-react-native-library@latest --help for the list of options
+// pnpm dlx create-react-native-library@latest --help for the list of options
 
 import path from 'node:path';
 import fs from 'node:fs/promises';
@@ -21,5 +22,5 @@ export const reactNativeApp = async (name: string, options: Options = {}) => {
   await rimraf(cwd);
   await fs.mkdir(cwd);
   /** @ts-expect-error ma porco dio. */
-  await execAsync(`yarn dlx @react-native-community/cli@latest init ${name}${parseBashOptions(options)}`, { cwd });
+  await execAsync(`pnpm dlx @react-native-community/cli@latest init ${name}${parseBashOptions(options)}`, { cwd });
 };

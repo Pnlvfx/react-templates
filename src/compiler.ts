@@ -1,3 +1,4 @@
+/* eslint-disable parallelize/no-sequential-await */
 import fs from 'node:fs/promises';
 import { templateRoot } from './config.ts';
 import { reactNativeApp } from './react-native.ts';
@@ -88,7 +89,7 @@ switch (framework) {
   }
 }
 
-await execAsync('yarn prettier . --write');
+await execAsync('pnpm prettier . --write');
 
 // TURBO SUCK, THERE IS NO WAY TO PREVENT COMMITTING AFTER RUNNINNG THIS SHIT.
-// await turboTemplate('example', { example: 'with-tailwind', 'package-manager': 'yarn', 'skip-install': true });
+// await turboTemplate('example', { example: 'with-tailwind', 'package-manager': 'pnpm', 'skip-install': true });

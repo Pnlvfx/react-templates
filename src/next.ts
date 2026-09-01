@@ -1,3 +1,4 @@
+/* eslint-disable parallelize/no-sequential-await */
 /* eslint-disable no-console */
 import path from 'node:path';
 import { templateRoot } from './config.ts';
@@ -17,7 +18,7 @@ export const nextJsTemplate = async (name: string, options: Options = {}) => {
   await rimraf(cwd);
   await fs.mkdir(cwd);
   /** @ts-expect-error ma porco dio. */
-  const command = `yarn dlx create-next-app@canary ${name}${parseBashOptions(options)} --yes`;
+  const command = `pnpm dlx create-next-app@canary ${name}${parseBashOptions(options)} --yes`;
   console.log('Generation nextjs app', name, `with command:\n${command}`);
   await execAsync(command, { cwd });
 };

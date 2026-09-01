@@ -1,3 +1,4 @@
+/* eslint-disable parallelize/no-sequential-await */
 /* eslint-disable no-console */
 import { execAsync } from '@goatjs/node/exec';
 import fs from 'node:fs/promises';
@@ -25,5 +26,5 @@ export const reactNativeBuilderBob = async (name: string, options: Options = {})
   await rimraf(cwd);
   await fs.mkdir(cwd);
   /** @ts-expect-error ma porco dio. */
-  await execAsync(`yarn dlx create-react-native-library@latest ${name}${parseBashOptions(options)}`, { cwd });
+  await execAsync(`pnpm dlx create-react-native-library@latest ${name}${parseBashOptions(options)}`, { cwd });
 };

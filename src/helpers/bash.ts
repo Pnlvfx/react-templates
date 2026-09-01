@@ -1,6 +1,5 @@
 /* eslint-disable unicorn/no-break-in-nested-loop */
 type AllowedValue = string | boolean | undefined;
-
 type BashOptions = Record<string, AllowedValue>;
 
 export const parseBashOptions = (options: BashOptions) => {

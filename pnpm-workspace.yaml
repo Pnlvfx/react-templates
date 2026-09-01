@@ -1,0 +1,13 @@
+nodeLinker: hoisted
+
+fetchRetries: 0
+
+fetchTimeout: 900000
+
+minimumReleaseAge: 1440
+
+minimumReleaseAgeExclude:
+  - '@goatjs/*'
+
+allowBuilds:
+  unrs-resolver: true

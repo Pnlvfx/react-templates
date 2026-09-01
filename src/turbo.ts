@@ -1,3 +1,4 @@
+/* eslint-disable parallelize/no-sequential-await */
 /* eslint-disable no-console */
 import path from 'node:path';
 import { templateRoot } from './config.ts';
@@ -18,5 +19,5 @@ export const turboTemplate = async (name: string, options: Options = {}) => {
   await rimraf(cwd);
   await fs.mkdir(cwd);
   /** @ts-expect-error ma porco dio. */
-  await execAsync(`yarn dlx create-turbo@latest ${name}${parseBashOptions(options)}`, { cwd });
+  await execAsync(`pnpm dlx create-turbo@latest ${name}${parseBashOptions(options)}`, { cwd });
 };
