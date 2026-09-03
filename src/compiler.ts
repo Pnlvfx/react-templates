@@ -8,6 +8,7 @@ import { dbz } from '@goatjs/dbz';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { reactViteTemplate } from './vite.ts';
+import { createElectronApp } from './electron-vite.ts';
 import { execAsync } from '@goatjs/node/exec';
 import { turboTemplate } from './turbo.ts';
 import { createGitClient } from '@goatjs/node/git';
@@ -84,7 +85,7 @@ switch (framework) {
     await createReactViteApp();
     // await createFabricLibrary();
     await createReactNativeApp();
-    // await createElectronApp('electron-vite', { skipInstall: true, template: 'react' });
+    await createElectronApp('electron-vite', { skipInstall: true, template: 'react' });
     // await turboTemplate('turbo');
   }
 }
