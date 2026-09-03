@@ -16,7 +16,7 @@ export const createElectronApp = async (name: string, { skipInstall, template = 
   const cwd = path.join(templateRoot, 'electron-vite');
   await rimraf(cwd);
   await fs.mkdir(cwd, { recursive: true });
-  const command = `pnpm create electron-vite ${name} --template ${template}${parseBashOptions({ skip: skipInstall })}`;
+  const command = `pnpm create @quick-start/electron ${name} --template ${template}${parseBashOptions({ skip: skipInstall })}`;
   console.log('Generating electron-vite app', name, `with command:\n${command}`);
   await execAsync(command, { cwd });
 };
