@@ -16,7 +16,7 @@ import { createGitClient } from '@goatjs/node/git';
 const git = createGitClient();
 await dbz.checkGitStatus(git);
 
-// TODO [2026-02-12] use kebabCase from goatjs node to parse the keys from camel (change key to camel)
+// TODO [2026-12-12] use kebabCase from goatjs node to parse the keys from camel (change key to camel)
 // add check for left changes on git
 
 try {
